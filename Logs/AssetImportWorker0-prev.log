@@ -1,0 +1,1040 @@
+Unity Editor version:    6000.3.1f1 (37142da19a94)
+Branch:                  6000.3/respin/6000.3.1f1-f56f53296c2c
+Build type:              Release
+Batch mode:              YES
+System name:             Linux
+Distro version:          #37-Ubuntu SMP PREEMPT_DYNAMIC Fri Nov 14 22:10:32 UTC 2025
+Kernel version:          6.14.0-37-generic
+Architecture:            x86_64
+Available memory:        15418 MB
+Date:                    2025-12-20T16:04:53Z
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-yariktel54" at "2025-12-20T16:04:53.067811Z"
+[SignatureVerifier] Application signature verification not supported on this platform.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              990307fa64cb426bb87927e804bb0b9b
+  Correlation Id:          4554344b915b54388a81c236df5151ee
+  External correlation Id: 632953174804004323
+  Machine Id:              S1y45CjPIv4J6e5YRNXPx2g+/GM=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-yariktel54" (connect: 0.00s, validation: 0.00s, handshake: 0.00s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-yariktel54-notifications" at "2025-12-20T16:04:53.068972Z"
+[Licensing::Module] Licensing Background thread has ended after 0.00s
+Selected window backend: (null) 
+Desktop is 3840 x 2160 @ 60 Hz
+Initialize udev device monitor.
+
+COMMAND LINE ARGUMENTS:
+Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/home/yariktel54/MAVlink data
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+46577
+-licensingIpc
+LicenseClient-yariktel54
+-job-worker-count
+2
+-background-job-worker-count
+8
+-gc-helper-count
+1
+Successfully changed project path to: /home/yariktel54/MAVlink data
+/home/yariktel54/MAVlink data
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [136861578689344]  Target information:
+
+Player connection [136861578689344]  * "[IP] 192.168.0.103 [Port] 0 [Flags] 2 [Guid] 2357718370 [EditorId] 2357718370 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.103) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
+
+Player connection [136861578689344]  * "[IP] 10.0.3.1 [Port] 0 [Flags] 2 [Guid] 2357718370 [EditorId] 2357718370 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.103) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
+
+Player connection [136861578689344] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [136861578689344] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 2
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 1,71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Initialize engine version: 6000.3.1f1 (37142da19a94)
+[Subsystems] Discovering subsystems at path /home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /home/yariktel54/MAVlink data/Assets
+kGfxThreadingModeNonThreaded is not supported on OpenGL Core. Reverting to kGfxThreadingModeDirect instead.
+GfxDevice: creating device client; kGfxThreadingModeDirect
+GLX Extensions: GLX_ARB_get_proc_address GLX_ARB_multisample GLX_EXT_visual_info GLX_EXT_visual_rating GLX_EXT_import_context GLX_SGI_video_sync GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGI_swap_control GLX_EXT_swap_control GLX_EXT_swap_control_tear GLX_EXT_buffer_age GLX_ARB_create_context GLX_ARB_create_context_profile GLX_NV_float_buffer GLX_ARB_fbconfig_float GLX_EXT_texture_from_pixmap GLX_EXT_framebuffer_sRGB GLX_NV_copy_image GLX_EXT_create_context_es_profile GLX_EXT_create_context_es2_profile GLX_ARB_create_context_no_error GLX_ARB_create_context_robustness GLX_NV_delay_before_swap GLX_EXT_stereo_tree GLX_ARB_context_flush_control GLX_NV_robustness_video_memory_purge GLX_NV_multigpu_context 
+Renderer: NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2
+Vendor:   NVIDIA Corporation
+Version:  4.5.0 NVIDIA 570.195.03
+GLES:     0
+ GL_AMD_multi_draw_indirect GL_AMD_seamless_cubemap_per_texture GL_AMD_vertex_shader_viewport_index GL_AMD_vertex_shader_layer GL_ARB_arrays_of_arrays GL_ARB_base_instance GL_ARB_bindless_texture GL_ARB_blend_func_extended GL_ARB_buffer_storage GL_ARB_clear_buffer_object GL_ARB_clear_texture GL_ARB_clip_control GL_ARB_color_buffer_float GL_ARB_compressed_texture_pixel_storage GL_ARB_conservative_depth GL_ARB_compute_shader GL_ARB_compute_variable_group_size GL_ARB_conditional_render_inverted GL_ARB_copy_buffer GL_ARB_copy_image GL_ARB_cull_distance GL_ARB_debug_output GL_ARB_depth_buffer_float GL_ARB_depth_clamp GL_ARB_depth_texture GL_ARB_derivative_control GL_ARB_direct_state_access GL_ARB_draw_buffers GL_ARB_draw_buffers_blend GL_ARB_draw_indirect GL_ARB_draw_elements_base_vertex GL_ARB_draw_instanced GL_ARB_enhanced_layouts GL_ARB_ES2_compatibility GL_ARB_ES3_compatibility GL_ARB_ES3_1_compatibility GL_ARB_ES3_2_compatibility GL_ARB_explicit_attrib_location GL_ARB_explicit_uniform_location GL_ARB_fragmen
+t_coord_conventions GL_ARB_fragment_layer_viewport GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_fragment_shader_interlock GL_ARB_framebuffer_no_attachments GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_get_program_binary GL_ARB_get_texture_sub_image GL_ARB_gl_spirv GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_ARB_gpu_shader_int64 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_indirect_parameters GL_ARB_instanced_arrays GL_ARB_internalformat_query GL_ARB_internalformat_query2 GL_ARB_invalidate_subdata GL_ARB_map_buffer_alignment GL_ARB_map_buffer_range GL_ARB_multi_bind GL_ARB_multi_draw_indirect GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_occlusion_query2 GL_ARB_parallel_shader_compile GL_ARB_pipeline_statistics_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_polygon_offset_clamp GL_ARB_post_depth_coverage GL_ARB_program_interface_query GL_ARB_provoki
+ng_vertex GL_ARB_query_buffer_object GL_ARB_robust_buffer_access_behavior GL_ARB_robustness GL_ARB_sample_locations GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_seamless_cubemap_per_texture GL_ARB_separate_shader_objects GL_ARB_shader_atomic_counter_ops GL_ARB_shader_atomic_counters GL_ARB_shader_ballot GL_ARB_shader_bit_encoding GL_ARB_shader_clock GL_ARB_shader_draw_parameters GL_ARB_shader_group_vote GL_ARB_shader_image_load_store GL_ARB_shader_image_size GL_ARB_shader_objects GL_ARB_shader_precision GL_ARB_shader_storage_buffer_object GL_ARB_shader_subroutine GL_ARB_shader_texture_image_samples GL_ARB_shader_texture_lod GL_ARB_shading_language_100 GL_ARB_shader_viewport_layer_array GL_ARB_shading_language_420pack GL_ARB_shading_language_include GL_ARB_shading_language_packing GL_ARB_shadow GL_ARB_sparse_buffer GL_ARB_sparse_texture GL_ARB_sparse_texture2 GL_ARB_sparse_texture_clamp GL_ARB_spirv_extensions GL_ARB_stencil_texturing GL_ARB_sync GL_ARB_tessellation_shader GL_A
+RB_texture_barrier GL_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_buffer_range GL_ARB_texture_compression GL_ARB_texture_compression_bptc GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_cube_map_array GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_filter_anisotropic GL_ARB_texture_filter_minmax GL_ARB_texture_float GL_ARB_texture_gather GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_mirrored_repeat GL_ARB_texture_multisample GL_ARB_texture_non_power_of_two GL_ARB_texture_query_levels GL_ARB_texture_query_lod GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_texture_rgb10_a2ui GL_ARB_texture_stencil8 GL_ARB_texture_storage GL_ARB_texture_storage_multisample GL_ARB_texture_swizzle GL_ARB_texture_view GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_transform_feedback_instanced GL_ARB_transform_feedback_overflow_query GL_ARB_t
+ranspose_matrix GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ARB_vertex_array_object GL_ARB_vertex_attrib_64bit GL_ARB_vertex_attrib_binding GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_vertex_type_2_10_10_10_rev GL_ARB_viewport_array GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_texture_float GL_ATI_texture_mirror_once GL_S3_s3tc GL_EXT_texture_env_add GL_EXT_abgr GL_EXT_bgra GL_EXT_bindable_uniform GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_Cg_shader GL_EXT_depth_bounds_test GL_EXT_direct_state_access GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXTX_framebuffer_mixed_formats GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters 
+GL_EXT_gpu_shader4 GL_EXT_multi_draw_arrays GL_EXT_multiview_texture_multisample GL_EXT_multiview_timer_query GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_polygon_offset_clamp GL_EXT_post_depth_coverage GL_EXT_provoking_vertex GL_EXT_raster_multisample GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_separate_shader_objects GL_EXT_separate_specular_color GL_EXT_shader_image_load_formatted GL_EXT_shader_image_load_store GL_EXT_shader_integer_mix GL_EXT_shadow_funcs GL_EXT_sparse_texture2 GL_EXT_stencil_two_side GL_EXT_stencil_wrap GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_filter_minmax GL_EXT_texture_integer GL_EXT_texture_lod G
+L_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_texture_shadow_lod GL_EXT_texture_shared_exponent GL_EXT_texture_sRGB GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_decode GL_EXT_texture_storage GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback2 GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_EXT_vertex_attrib_64bit GL_EXT_window_rectangles GL_EXT_x11_sync_object GL_EXT_import_sync_object GL_NV_robustness_video_memory_purge GL_IBM_rasterpos_clip GL_IBM_texture_mirrored_repeat GL_KHR_context_flush_control GL_KHR_debug GL_EXT_memory_object GL_EXT_memory_object_fd GL_NV_memory_object_sparse GL_KHR_parallel_shader_compile GL_KHR_no_error GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_EXT_semaphore GL_EXT_semaphore_fd GL_NV_timeline_semaphore GL_KHR_shader_subgroup GL_KTX_buffer_region GL_NV_alpha_to_coverage_dither_control GL_NV_bindless_multi_draw_indirect GL_NV_bindless_multi_draw_indirect_count GL_NV_bindless_texture GL_NV_blend_equation_advanced GL_NV_
+blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffers GL_NV_blend_minmax_factor GL_NV_blend_square GL_NV_clip_space_w_scaling GL_NV_command_list GL_NV_compute_program5 GL_NV_compute_shader_derivatives GL_NV_conditional_render GL_NV_conservative_raster GL_NV_conservative_raster_dilate GL_NV_conservative_raster_pre_snap GL_NV_conservative_raster_pre_snap_triangles GL_NV_conservative_raster_underestimation GL_NV_copy_depth_to_color GL_NV_copy_image GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_draw_texture GL_NV_draw_vulkan_image GL_NV_ES1_1_compatibility GL_NV_ES3_1_compatibility GL_NV_explicit_multisample GL_NV_feature_query GL_NV_fence GL_NV_fill_rectangle GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_coverage_to_color GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_fragment_shader_barycentric GL_NV_fragment_shader_interlock GL_NV_framebuffer_mixed_samples GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_geometry_sha
+der_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_NV_gpu_program_fp64 GL_NV_gpu_program_multiview GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_mesh_shader GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_representative_fragment_test GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_scissor_exclusive GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_part
+itioned GL_NV_shader_texture_footprint GL_NV_shading_rate_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_uniform_buffer_std430_layout GL_NV_vdpau_interop GL_NV_vdpau_interop2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NVX_nvenc_interop GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_cohe
+rent GL_OVR_multiview GL_OVR_multiview2 GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum
+OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle -1942522360
+Initialize mono
+Mono path[0] = '/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Managed'
+Mono path[1] = '/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
+Mono config path = '/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56677
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0,001772 seconds.
+- Loaded All Assemblies, in  0,472 seconds
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0,579 seconds
+Domain Reload Profiling: 1051ms
+	BeginReloadAssembly (98ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (242ms)
+		LoadAssemblies (97ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (239ms)
+			TypeCache.Refresh (237ms)
+				TypeCache.ScanAssembly (218ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (580ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (519ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (76ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (126ms)
+			ProcessInitializeOnLoadAttributes (202ms)
+			ProcessInitializeOnLoadMethodAttributes (109ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-JP79-R2WD-8967-F2HN-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 7971724315987-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  0,730 seconds
+Refreshing native plugins compatible for Editor in 0,33 ms, found 0 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0,773 seconds
+Domain Reload Profiling: 1502ms
+	BeginReloadAssembly (168ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (41ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (448ms)
+		LoadAssemblies (278ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (238ms)
+			TypeCache.Refresh (194ms)
+				TypeCache.ScanAssembly (177ms)
+			BuildScriptInfoCaches (35ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (773ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (613ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (168ms)
+			ProcessInitializeOnLoadAttributes (383ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+AutoLocale: current locale expects 'C' but got 'uk_UA.UTF-8'Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3869 unused Assets / (2.0 MB). Loaded Objects now: 4450.
+Memory consumption went from 84.0 MB to 82.0 MB.
+Total: 12.483569 ms (FindLiveObjects: 0.508778 ms CreateObjectMapping: 0.629985 ms MarkObjects: 8.819021 ms  DeleteObjects: 2.524387 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 5407.369599 seconds.
+  path: Assets/InputSystem_Actions.inputactions
+  artifactKey: Guid(289c1b55c9541489481df5cc06664110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InputSystem_Actions.inputactions using Guid(289c1b55c9541489481df5cc06664110) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7ae34723c8831fb3f93db632de41c472') in 0.02741403 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.178816 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/all.xml
+  artifactKey: Guid(4ea2dfa901686f8e6b6752787afa14c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/all.xml using Guid(4ea2dfa901686f8e6b6752787afa14c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '89833a3c53c32ca519f3cdd57188399b') in 0.052577818 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/csAirLink.xml
+  artifactKey: Guid(fd81a3a89ce340d15b0fffe5ca0fee85) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/csAirLink.xml using Guid(fd81a3a89ce340d15b0fffe5ca0fee85) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '610caef98936d3d355ac2f4716f1e219') in 0.001538917 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/CS/MavlinkCRC.cs
+  artifactKey: Guid(c0b5a4eb9c5b3af3b8120d6e90b9e17f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/CS/MavlinkCRC.cs using Guid(c0b5a4eb9c5b3af3b8120d6e90b9e17f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '361333ad3c95dc1e495744e2a5d336d9') in 0.034370187 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalSimpleTypes.py
+  artifactKey: Guid(8421839efad57d001b2a31ebaf4533d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalSimpleTypes.py using Guid(8421839efad57d001b2a31ebaf4533d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '600c8b7a625e836f33be7867f497a1cf') in 0.001587309 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/development.xml
+  artifactKey: Guid(84d5e25f63d7eb8fc8554adb21724b0f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/development.xml using Guid(84d5e25f63d7eb8fc8554adb21724b0f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ebdb1ee1c922d818e07ec8e72549766f') in 0.001570171 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/Scripts/Mavlink/MavlinkParse.cs
+  artifactKey: Guid(3c5952fd33f2bd1d1b83b8945779238f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/MavlinkParse.cs using Guid(3c5952fd33f2bd1d1b83b8945779238f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '11db190f7dad41fce9ea285a079ec48e') in 0.001665216 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000098 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/mavgen.py
+  artifactKey: Guid(a4a1b9b2e57a0edd6a8da11d1405b84c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/mavgen.py using Guid(a4a1b9b2e57a0edd6a8da11d1405b84c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6d24149e9d0f9794f302867e32c41c63') in 0.00160444 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/python_array_test.xml
+  artifactKey: Guid(e2577bf6177a1ac8fbf5b4752363b942) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/python_array_test.xml using Guid(e2577bf6177a1ac8fbf5b4752363b942) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a603e78815ae12f3b0aa58f2c2b2fd6e') in 0.001403319 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/tools
+  artifactKey: Guid(a95d3b37fa04ebf7b96203254879a966) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/tools using Guid(a95d3b37fa04ebf7b96203254879a966) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '85ad4c6a58936191852f2317b4771829') in 0.0013881 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000102 seconds.
+  path: Assets/Scripts/Mavlink/component_information/Parameter.cs
+  artifactKey: Guid(1f81d7678510054a18970acfe9e270e4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/component_information/Parameter.cs using Guid(1f81d7678510054a18970acfe9e270e4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '10bc781ab1492b5b5b70a6d74aec7b27') in 0.001656816 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Scripts/Mavlink/MavlinkUtil.cs
+  artifactKey: Guid(d3e8a4b00da90e30da06ab31014df5f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/MavlinkUtil.cs using Guid(d3e8a4b00da90e30da06ab31014df5f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e239bdbfdc1b0a2b4f4aa4ace9807b23') in 0.001581666 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000118 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/tools/mavgen.py
+  artifactKey: Guid(4bbc6b8a31a978e549f48d4d148d9584) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/tools/mavgen.py using Guid(4bbc6b8a31a978e549f48d4d148d9584) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '178338f571f8e8625350794cd5058bf5') in 0.001489274 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/mavparse.py
+  artifactKey: Guid(55bf941cbd94eb859bf0b85ac1dc28ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/mavparse.py using Guid(55bf941cbd94eb859bf0b85ac1dc28ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bbd3a2e205f6b137ac16193316a43182') in 0.001553862 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/test.xml
+  artifactKey: Guid(80789475815a9a07190c021fe686947e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/test.xml using Guid(80789475815a9a07190c021fe686947e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0688233a2ba71d0a10f1686fe16c0299') in 0.001540073 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Scripts/Mavlink/component_information
+  artifactKey: Guid(d6d867fae889b3e079c7c4b36ddeb7d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/component_information using Guid(d6d867fae889b3e079c7c4b36ddeb7d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '210139ac97334404ed70cd0f8912ead3') in 0.001309718 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/CS
+  artifactKey: Guid(b97453b8efaf4e3b799e336e842db271) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/CS using Guid(b97453b8efaf4e3b799e336e842db271) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eb1242e4e33c75d549e14d49d4667cf7') in 0.0013278 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000102 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifBase.py
+  artifactKey: Guid(fae970c75060a8f879580dc42861064a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifBase.py using Guid(fae970c75060a8f879580dc42861064a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '16010df59a30b13acb81d9f2fa581bce') in 0.002784865 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink
+  artifactKey: Guid(c54a8710f875febc1a2aaae469ca4975) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink using Guid(c54a8710f875febc1a2aaae469ca4975) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eb44dbd68c6b8e1773af3a202052c1bc') in 0.001415308 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/CS/MAVLink.csproj
+  artifactKey: Guid(9a643063d9974a2af8140abd1e170529) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/CS/MAVLink.csproj using Guid(9a643063d9974a2af8140abd1e170529) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cd91aefa1cb55bcdfe5b112e88a0216d') in 0.001530191 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000119 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif
+  artifactKey: Guid(693645e784d6eac94a71ec042fbf3b49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif using Guid(693645e784d6eac94a71ec042fbf3b49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '64b588d0daca848b2d7685755a44a4b9') in 0.001435854 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/XInclude.xsd
+  artifactKey: Guid(b0e373cfa2d534cf59d4890b405172ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/XInclude.xsd using Guid(b0e373cfa2d534cf59d4890b405172ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a0ce022742a2a191443bf4eba189ddde') in 0.001458671 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/icarous.xml
+  artifactKey: Guid(150e7f774547bac78b44e33eaf363e2b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/icarous.xml using Guid(150e7f774547bac78b44e33eaf363e2b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e077234889b6c424f978e7c9c3f14d9a') in 0.001519132 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/Scripts/Mavlink
+  artifactKey: Guid(e8f8415a1e4ebcef9bf693effdf0f1ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink using Guid(e8f8415a1e4ebcef9bf693effdf0f1ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8816e7d2a0aff9d001cdb177660d804b') in 0.001450591 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/Scripts/Mavlink/mavlink.lua
+  artifactKey: Guid(3deea7e091e87f3eb8655ae005a50890) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/mavlink.lua using Guid(3deea7e091e87f3eb8655ae005a50890) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5fefb36d327eb4d29ef84cd2270587c9') in 0.001437237 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000128 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifApi.py
+  artifactKey: Guid(cff1129d3c1f0f478ab40c1cd0aa80da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifApi.py using Guid(cff1129d3c1f0f478ab40c1cd0aa80da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '752637b56a7f0389b96ec024d0c61fcd') in 0.001486082 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000095 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/CS/MAVLinkParam.cs
+  artifactKey: Guid(52cab2742b0efd00cb54c3dc432f1cb2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/CS/MAVLinkParam.cs using Guid(52cab2742b0efd00cb54c3dc432f1cb2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '08329042d9ec0fa658ffa3afab7b6d12') in 0.001808034 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000127 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/paparazzi.xml
+  artifactKey: Guid(91f46693382316ae288c1755420e2a46) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/paparazzi.xml using Guid(91f46693382316ae288c1755420e2a46) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4e289cc6257d963ffbc759ab2f47b2f9') in 0.001544337 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifMinidom.py
+  artifactKey: Guid(1532f6b8145093a33b590082f2bbfc01) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifMinidom.py using Guid(1532f6b8145093a33b590082f2bbfc01) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '422454a6756d42ac47fccf0763e6e055') in 0.001441862 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Scripts/Mavlink/MavlinkCRC.cs
+  artifactKey: Guid(5c12550d09afd8f84a0fcbba99d65e0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/MavlinkCRC.cs using Guid(5c12550d09afd8f84a0fcbba99d65e0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8304c059600f9a44b5d95814859adc17') in 0.001486704 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/CS/MavlinkParse.cs
+  artifactKey: Guid(681381d754f5e671299b297aba96c639) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/CS/MavlinkParse.cs using Guid(681381d754f5e671299b297aba96c639) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '05dcd9fc72891a1d7ec2a5ceab7255b8') in 0.001620317 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifElementTree.py
+  artifactKey: Guid(902d5e32da8b224a984f98d500cd7168) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifElementTree.py using Guid(902d5e32da8b224a984f98d500cd7168) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f1a667e6a4ddbc59a63040484d86feef') in 0.001703909 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/XMLSchema.xsd
+  artifactKey: Guid(52b96cbe04f2eeae9a34e172a19156e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/XMLSchema.xsd using Guid(52b96cbe04f2eeae9a34e172a19156e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c00f91f40d5323bf0fbb19c1cd26c240') in 0.001603405 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Scripts/Mavlink/MAVLinkParamList.cs
+  artifactKey: Guid(2adfbe2c5497a3ddcb527e1abd67eb24) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/MAVLinkParamList.cs using Guid(2adfbe2c5497a3ddcb527e1abd67eb24) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '13d366b99c2a832a09b07a5a5c4a2c26') in 0.001701312 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/storm32.xml
+  artifactKey: Guid(2be6648f61f5f3ddfbb91dd02d951bc9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/storm32.xml using Guid(2be6648f61f5f3ddfbb91dd02d951bc9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '85569ef5e20b6d51e0e237720d31437e') in 0.001513781 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Scripts/Mavlink/mykey.snk
+  artifactKey: Guid(42e4f8b525e3fa3bfb4d56ba20037a02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/mykey.snk using Guid(42e4f8b525e3fa3bfb4d56ba20037a02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3bfea7073b6b4fe3a25eceba589d3deb') in 0.001310518 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000102 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmliftest.py
+  artifactKey: Guid(aac6680fe58da5ba28b1331c0e7a1081) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmliftest.py using Guid(aac6680fe58da5ba28b1331c0e7a1081) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '51caea546c00ed3dfdb3d6e5dd98f65c') in 0.001377687 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/mavgen_cs.py
+  artifactKey: Guid(70e0cabc57d1feabfa5f7ed1cf29c3e9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/mavgen_cs.py using Guid(70e0cabc57d1feabfa5f7ed1cf29c3e9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eb4d706260333327e74959bbf86f0bc2') in 0.001514349 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlif4Dom.py
+  artifactKey: Guid(c9904e7e29910bd24811f0dc04d5e4e1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlif4Dom.py using Guid(c9904e7e29910bd24811f0dc04d5e4e1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9e66ea9400e264769ce9f580c3a573c1') in 0.001504933 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/standard.xml
+  artifactKey: Guid(a892150fed28a417fa995fc756a12218) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/standard.xml using Guid(a892150fed28a417fa995fc756a12218) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1a27fbd45d1e11fe582240e0372c7e5d') in 0.001521946 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000104 seconds.
+  path: Assets/Scripts/Mavlink/MAVLink.csproj
+  artifactKey: Guid(3b39844b401286ca793c7a3d0af2f5ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/MAVLink.csproj using Guid(3b39844b401286ca793c7a3d0af2f5ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '158aad03e39f794e65537f37dae9d9f6') in 0.001574372 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Scripts/Mavlink/MAVLinkParam.cs
+  artifactKey: Guid(678327e18e21957d8b6269dc6edc5dd4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/MAVLinkParam.cs using Guid(678327e18e21957d8b6269dc6edc5dd4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b2c6b09f60488666ed988ea12588d4c4') in 0.001666847 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/matrixpilot.xml
+  artifactKey: Guid(aaa7cb863ef4244b7bf675d01edc227b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/matrixpilot.xml using Guid(aaa7cb863ef4244b7bf675d01edc227b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c5101fd484ea1345eaa409ddec2252dd') in 0.001417975 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/CS/MAVLinkParamList.cs
+  artifactKey: Guid(de931913d1594bec2983a81e5862ef5c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/CS/MAVLinkParamList.cs using Guid(de931913d1594bec2983a81e5862ef5c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9dcd84817e3bc4dff2b9690785149954') in 0.001590144 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000131 seconds.
+  path: Assets/Scripts/Mavlink/regenerate.bat
+  artifactKey: Guid(5915ca6515e099439b74f222de80234a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/regenerate.bat using Guid(5915ca6515e099439b74f222de80234a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '049349281d522dc8bf3489c292a9045c') in 0.001447113 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/__init__.py
+  artifactKey: Guid(cc0f33f3d0170916ca5b111520d514ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/__init__.py using Guid(cc0f33f3d0170916ca5b111520d514ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5f24579c1963a01770956da9f977cc0f') in 0.001518118 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000120 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalUtils.py
+  artifactKey: Guid(64fb0b4ba56b03e078d931d2b18808a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalUtils.py using Guid(64fb0b4ba56b03e078d931d2b18808a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3c772b5647116f0545ae280dac1482f7') in 0.00148194 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalSchema.py
+  artifactKey: Guid(21bb9423494f2aef18d801a3baab6d69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalSchema.py using Guid(21bb9423494f2aef18d801a3baab6d69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f44ad37bd1305a693c7f7b336544f325') in 0.001624782 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/mavcrc.py
+  artifactKey: Guid(1f79e2ec255a7abc69222ed129680b19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/mavcrc.py using Guid(1f79e2ec255a7abc69222ed129680b19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'de37f782891a9ccbc816713a4b1c3447') in 0.001470194 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/ASLUAV.xml
+  artifactKey: Guid(4a050c1a95eae64038aa2bff5ea4978f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/ASLUAV.xml using Guid(4a050c1a95eae64038aa2bff5ea4978f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8e898afffe023bcf2baa96cd232ed0e7') in 0.00150294 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/__init__.py
+  artifactKey: Guid(122762940629d06a2b2ce469267d92d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/__init__.py using Guid(122762940629d06a2b2ce469267d92d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '15dfa6fbe0653908268508a56b691593') in 0.001322473 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalBase.py
+  artifactKey: Guid(048b5a1bb151aaa2cae1a7ff0156199b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalBase.py using Guid(048b5a1bb151aaa2cae1a7ff0156199b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3b1793d2f93074e22b8b69328c9176f5') in 0.001456234 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/Scripts/Mavlink/MAVLinkMessage.cs
+  artifactKey: Guid(94b27c9db931e79308bfd057d99df0ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/MAVLinkMessage.cs using Guid(94b27c9db931e79308bfd057d99df0ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '77dd3aeb278d7d90f1a45329b4c9591f') in 0.001638495 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/CS/MavlinkUtil.cs
+  artifactKey: Guid(14ee44f2b9805ba46b47bd877bb6a088) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/CS/MavlinkUtil.cs using Guid(14ee44f2b9805ba46b47bd877bb6a088) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bd93a4bdb155a73d460a5194f4be6143') in 0.001672024 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/cubepilot.xml
+  artifactKey: Guid(e87e8420873668e35804b5f9258af10b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/cubepilot.xml using Guid(e87e8420873668e35804b5f9258af10b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fed1fe0bfe9d98c27ae4d066c7674471') in 0.001502869 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000124 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/minixsvWrapper.py
+  artifactKey: Guid(9851cff00c22e807ab454a24e6ad7d56) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/minixsvWrapper.py using Guid(9851cff00c22e807ab454a24e6ad7d56) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0f5caa4a55d48ca321efb093a2f2340d') in 0.001587164 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/datatypes.xsd
+  artifactKey: Guid(625eda55d835195fb883cd3d2d242453) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/datatypes.xsd using Guid(625eda55d835195fb883cd3d2d242453) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '064b5f7976307d9749304fa0bee84118') in 0.001455538 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/offspec.xml
+  artifactKey: Guid(ea33715b81e64a0f5806ba4e84080e53) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/offspec.xml using Guid(ea33715b81e64a0f5806ba4e84080e53) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '23287d60ce92579c421418f0c0ac85a5') in 0.00132273 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv
+  artifactKey: Guid(a28817a30f836bab996cba4c457e1e3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv using Guid(a28817a30f836bab996cba4c457e1e3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5cc2eec42a68c436aaca00cded1d1864') in 0.001491607 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/common.xml
+  artifactKey: Guid(7740c52dfc6ef9869ad335ada1cc778b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/common.xml using Guid(7740c52dfc6ef9869ad335ada1cc778b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '434c025120096fa60536c46c95f6875f') in 0.001930121 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/loweheiser.xml
+  artifactKey: Guid(f98eeda744a30fd568aaefc409ceba5e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/loweheiser.xml using Guid(f98eeda744a30fd568aaefc409ceba5e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '562815175a69a93ccac884831f6de086') in 0.001626052 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000113 seconds.
+  path: Assets/Scripts/Mavlink/Mavlink.cs
+  artifactKey: Guid(f3d0320d2ac8d54f99f8ecb00e32acc7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/Mavlink.cs using Guid(f3d0320d2ac8d54f99f8ecb00e32acc7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4ca108e83d7e2ee6f07dd2f1b9e2efa7') in 0.001672965 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalXmlIf.py
+  artifactKey: Guid(2884bfb11cfa2f09db5eeb121c1705f0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalXmlIf.py using Guid(2884bfb11cfa2f09db5eeb121c1705f0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1a9a935793a575ac24cc03f7145d6a70') in 0.001519545 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/mavschema.xsd
+  artifactKey: Guid(a881f92239d75c885bf5cc57d369c9fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/mavschema.xsd using Guid(a881f92239d75c885bf5cc57d369c9fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9988152af7de5d9a10bd1c0df7648b96') in 0.001393119 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/minimal.xml
+  artifactKey: Guid(58890cc39a5fb5a928b17cc2e369b2d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/minimal.xml using Guid(58890cc39a5fb5a928b17cc2e369b2d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f933952a5428f11cae053f9a7663cfa1') in 0.001501427 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000131 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/mavgen_c.py
+  artifactKey: Guid(0db41373f30c33fe798e9e8e3d4ae767) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/mavgen_c.py using Guid(0db41373f30c33fe798e9e8e3d4ae767) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '19c8e2b609c6c67ac23ab9e7b9ae72ad') in 0.001521701 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator
+  artifactKey: Guid(5c2a74d0ee0ce7963b712560b5164cc8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator using Guid(5c2a74d0ee0ce7963b712560b5164cc8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0fb502545a0a2b4ad1ff56b6c8f5e79e') in 0.001466555 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/CS/MAVLinkMessage.cs
+  artifactKey: Guid(ddc206b158fdf493e9b72fe5a95673d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/CS/MAVLinkMessage.cs using Guid(ddc206b158fdf493e9b72fe5a95673d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e46ff0d61b320bced14f0add6b740b39') in 0.001741745 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/pyxsval.py
+  artifactKey: Guid(00bd86a8fa071fb8fa0e49be9d35b403) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/pyxsval.py using Guid(00bd86a8fa071fb8fa0e49be9d35b403) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '179d70662028886b9911c67ac492cfa3') in 0.001563405 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions
+  artifactKey: Guid(0a68b302d6eaa0729a91177e30eaf066) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions using Guid(0a68b302d6eaa0729a91177e30eaf066) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'de81930d94e165e71e99141d22e67d31') in 0.001421649 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/__init__.py
+  artifactKey: Guid(c8ba5acb645734322971c35b7967d5a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/__init__.py using Guid(c8ba5acb645734322971c35b7967d5a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8b631913ea2181a13e17c9784aca19de') in 0.001350167 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000109 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/__init__.py
+  artifactKey: Guid(c78ba039db6d8e22ba1ca49388a284bc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/__init__.py using Guid(c78ba039db6d8e22ba1ca49388a284bc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f987ab80626040d8063fe5bd7154ecda') in 0.001431859 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/mavgen_wlua.py
+  artifactKey: Guid(a0b6b45336cdd87f0b505e5d286c43fa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/mavgen_wlua.py using Guid(a0b6b45336cdd87f0b505e5d286c43fa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6108581f4142b73bcfc63e1b80e8102c') in 0.001470864 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/tools/__init__.py
+  artifactKey: Guid(8c1886b82331e560c9beb85de506f176) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/tools/__init__.py using Guid(8c1886b82331e560c9beb85de506f176) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '81120fdb3696a9e4c3c524422957e9aa') in 0.001596501 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalErrorHandler.py
+  artifactKey: Guid(addaa6521a6621f519896b072facd324) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xsvalErrorHandler.py using Guid(addaa6521a6621f519896b072facd324) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2b5357e5da866ce0ee6f1ccc72d824d0') in 0.003429602 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/mavtemplate.py
+  artifactKey: Guid(c0c9d1519d25796b98281b1ac35c7ba8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/mavtemplate.py using Guid(c0c9d1519d25796b98281b1ac35c7ba8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f5ed95646dadff6aaa8e6eb72566e69b') in 0.00184071 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/AVSSUAS.xml
+  artifactKey: Guid(e306f9b527112fa2d904e70459402627) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/AVSSUAS.xml using Guid(e306f9b527112fa2d904e70459402627) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ea69da231784c25babaf5aa25d16e745') in 0.001608556 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000110 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifODict.py
+  artifactKey: Guid(cc76842e9c569a012a5ca2c3b4711515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifODict.py using Guid(cc76842e9c569a012a5ca2c3b4711515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'efe53a5cb4d604d2045f6979ed2d6c43') in 0.001551481 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000115 seconds.
+  path: Assets/Scripts/Mavlink/updatexmls.bat
+  artifactKey: Guid(705c62094dab13c64ae2f7436ed3e300) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/updatexmls.bat using Guid(705c62094dab13c64ae2f7436ed3e300) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '69372744bd0b0b30c7613e12b4fd43b3') in 0.001812351 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xml.xsd
+  artifactKey: Guid(d2fa5af9efb19e973b3096b0f28b409e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/xml.xsd using Guid(d2fa5af9efb19e973b3096b0f28b409e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'aeca01032100477f8b5c28bd51de3375') in 0.001930299 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifDom.py
+  artifactKey: Guid(74612d4e6fe97bb3aaa5183fe9691f75) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifDom.py using Guid(74612d4e6fe97bb3aaa5183fe9691f75) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6a73285c63aa6f5d42b7e52ed236b720') in 0.001819082 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/ualberta.xml
+  artifactKey: Guid(842c32cf1b93f91cb9b4a46342f5cea9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/ualberta.xml using Guid(842c32cf1b93f91cb9b4a46342f5cea9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1c71f4c8ac83b92be040b1b67bcd6dba') in 0.001527863 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifUtils.py
+  artifactKey: Guid(67b712bd460d4c6a5b2207ffcd4ab5ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/genxmlif/xmlifUtils.py using Guid(67b712bd460d4c6a5b2207ffcd4ab5ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '058b6c2a7167b12bb6d5a2892137367d') in 0.001608487 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib
+  artifactKey: Guid(11aa4308c5b97226aa92ef1c1b5b27a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib using Guid(11aa4308c5b97226aa92ef1c1b5b27a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8d8df3f1e91617406e89762e727ad405') in 0.001462216 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/ardupilotmega.xml
+  artifactKey: Guid(1cc189fe421c203b4b38c3f13ab219e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/ardupilotmega.xml using Guid(1cc189fe421c203b4b38c3f13ab219e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5c85af7e2dbd13b1839389a9d92842f4') in 0.00155056 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/__init__.py
+  artifactKey: Guid(ad117654e30dd1e4aae4e14da38c9382) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/__init__.py using Guid(ad117654e30dd1e4aae4e14da38c9382) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a1ef8b1e0fefbf69424b86159c56b2d0') in 0.001555586 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Scripts/Mavlink/message_definitions/uAvionix.xml
+  artifactKey: Guid(3bfff3874b3155046be97242960faccd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/message_definitions/uAvionix.xml using Guid(3bfff3874b3155046be97242960faccd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '908c08941c4f2ff250c8e5e943f0da05') in 0.001544906 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/XMLSchema-instance.xsd
+  artifactKey: Guid(5eeba6b5d986d6a68bc8c592cfc8555e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mavlink/pymavlink/generator/lib/minixsv/XMLSchema-instance.xsd using Guid(5eeba6b5d986d6a68bc8c592cfc8555e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd371f48af8ea7367120a401fa7c2f868') in 0.001626904 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 70.876758 seconds.
+  path: Assets/Scripts/Mavlink
+  artifactKey: Guid(e8f8415a1e4ebcef9bf693effdf0f1ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Mavlink using Guid(e8f8415a1e4ebcef9bf693effdf0f1ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '71efab11bac8301b5e22b2f9c87974bd') in 0.000451088 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.838675 seconds.
+  path: Assets/Scripts/Mavlink/MAVLinkParam.cs
+  artifactKey: Guid(678327e18e21957d8b6269dc6edc5dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Mavlink/MAVLinkParam.cs using Guid(678327e18e21957d8b6269dc6edc5dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '961ba079e3ae7e961a6ee97c1856b449') in 0.000429418 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3862 unused Assets / (1.1 MB). Loaded Objects now: 4454.
+Memory consumption went from 84.5 MB to 83.4 MB.
+Total: 10.828873 ms (FindLiveObjects: 0.508379 ms CreateObjectMapping: 0.683987 ms MarkObjects: 8.521241 ms  DeleteObjects: 1.113943 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 5.861945 seconds.
+  path: Assets/MAVLinkParam.cs
+  artifactKey: Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MAVLinkParam.cs using Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dcb14b4def698a98cca72333c55691a0') in 0.000638101 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.634416 seconds.
+  path: Assets/MAVLinkParam.cs
+  artifactKey: Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MAVLinkParam.cs using Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '374e3e914677908ea4e6d50272e87526') in 0.002264337 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3862 unused Assets / (1.2 MB). Loaded Objects now: 4454.
+Memory consumption went from 84.5 MB to 83.3 MB.
+Total: 10.353738 ms (FindLiveObjects: 0.423636 ms CreateObjectMapping: 0.530830 ms MarkObjects: 8.217979 ms  DeleteObjects: 1.179528 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 23.098394 seconds.
+  path: Assets/MAVLinkUDPlisten.cs
+  artifactKey: Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MAVLinkUDPlisten.cs using Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9566e977ef11701426a3b6275c35fcd9') in 0.000423391 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.896441 seconds.
+  path: Assets/MAVLinkUDPlisten.cs
+  artifactKey: Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MAVLinkUDPlisten.cs using Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2f4ce26baa7a9f36bcaf369d03b1317b') in 0.001913949 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.40 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3862 unused Assets / (1.3 MB). Loaded Objects now: 4454.
+Memory consumption went from 84.5 MB to 83.2 MB.
+Total: 10.348933 ms (FindLiveObjects: 0.403860 ms CreateObjectMapping: 0.551679 ms MarkObjects: 8.224968 ms  DeleteObjects: 1.167286 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 44.246097 seconds.
+  path: Assets/MAVLinkUDPlisten.cs
+  artifactKey: Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MAVLinkUDPlisten.cs using Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1d4cc77591c4727af4fc267a154f1167') in 0.000639937 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.887416 seconds.
+  path: Assets/MAVLinkUDPlisten.cs
+  artifactKey: Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MAVLinkUDPlisten.cs using Guid(3fbeb5abddb64b2639e09f6e9324ccb1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c0d0013886a74fd3254d16603cb40e9e') in 0.004904339 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
