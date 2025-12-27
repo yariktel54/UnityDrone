@@ -1,6 +1,15 @@
 // MavLinkUdpListener.cs
-// Minimal ArduCopter + UDP MAVLink GCS client for Unity.
-// Goal: keep code small + robust for SITL.
+// Minimal ArduCopter MAVLink GCS client for Unity.
+// Transport: UDP (default) or TCP.
+//
+// UDP notes (recommended for SITL):
+// - Configure SITL/MAVProxy to send to Unity listenPort, e.g. --out udp:127.0.0.1:14551
+// - If your MAVProxy uses an ephemeral source port, enable replyToLastSender so commands go back to the correct port.
+//
+// TCP notes:
+// - Unity connects as a TCP client to tcpHost:tcpPort.
+// - On the SITL side you must expose a TCP server endpoint (often called tcpin).
+//
 // Features:
 // - RX: HEARTBEAT / COMMAND_ACK / STATUSTEXT / GLOBAL_POSITION_INT / LOCAL_POSITION_NED / VFR_HUD
 // - TX: GCS HEARTBEAT, (optional) REQUEST_DATA_STREAM, ARM/DISARM, GUIDED mode, TAKEOFF, LAND
@@ -21,6 +30,15 @@ using Debug = UnityEngine.Debug;
 
 public class MavLinkUdpListener : MonoBehaviour
 {
+    public enum Transport
+    {
+        UDP = 0,
+        TCP = 1
+    }
+
+    [Header("Transport")]
+    public Transport transport = Transport.UDP;
+
     [Header("UDP")]
     public int listenPort = 14551;               // Unity listens here (SITL --out udp:127.0.0.1:14551)
     public string targetIp = "127.0.0.1";
@@ -28,6 +46,19 @@ public class MavLinkUdpListener : MonoBehaviour
 
     [Tooltip("If true, send ALL outgoing packets to the UDP endpoint we last received from (QGC-style). Required for SITL because MAVProxy often uses an ephemeral source port. Recommended = true.")]
     public bool replyToLastSender = true;
+
+    [Header("TCP")]
+    [Tooltip("Unity connects as a TCP client to this host.")]
+    public string tcpHost = "127.0.0.1";
+
+    [Tooltip("TCP port on the autopilot/SITL side (Unity dials this).")]
+    public int tcpPort = 5760;
+
+    [Tooltip("Auto-reconnect if TCP link drops.")]
+    public bool tcpAutoReconnect = true;
+
+    [Tooltip("Reconnect delay in seconds.")]
+    public float tcpReconnectDelay = 1.0f;
 
     [Header("GCS identity")]
     public byte gcsSysId = 255;
@@ -91,11 +122,20 @@ public class MavLinkUdpListener : MonoBehaviour
 
     private MAVLink.MavlinkParse _parser;
 
+    // UDP
     private UdpClient _udp;
     private IPEndPoint _defaultTx;
     private volatile IPEndPoint _lastSender;
     private bool _loggedFirstRx;
 
+    // TCP
+    private TcpClient _tcp;
+    private NetworkStream _tcpStream;
+    private volatile bool _tcpConnected;
+    private readonly byte[] _tcpReadTmp = new byte[8192];
+    private readonly List<byte> _tcpRxBuffer = new List<byte>(16384);
+
+    // Threads
     private Thread _rxThread;
     private volatile bool _running;
 
@@ -131,11 +171,14 @@ public class MavLinkUdpListener : MonoBehaviour
     private static long NowMs() => _monoClock.ElapsedMilliseconds;
     private long _lastRxMs;
 
-    // Telemetry setup: run once when we know the correct TX endpoint
+    // Telemetry setup
     private bool _telemetryConfigured;
 
     private string CurrentTxLabel()
     {
+        if (transport == Transport.TCP)
+            return _tcpConnected ? $"tcp://{tcpHost}:{tcpPort}" : $"tcp://{tcpHost}:{tcpPort} (disconnected)";
+
         var ep = (replyToLastSender && _lastSender != null) ? _lastSender : _defaultTx;
         return ep == null ? "(none)" : $"{ep.Address}:{ep.Port}";
     }
@@ -146,28 +189,35 @@ public class MavLinkUdpListener : MonoBehaviour
     {
         _parser = new MAVLink.MavlinkParse();
 
-        // IMPORTANT: Unity keeps old inspector values in the scene/prefab.
-        // If earlier versions had replyToLastSender=false or autoConfigureTelemetry=false,
-        // your scene will keep those values even if the code default is now true.
-        // For SITL you almost always want reply-to-sender + telemetry configure.
         if (forceSitlDefaults)
         {
             replyToLastSender = true;
             autoConfigureTelemetry = true;
-            requestStreamsOnStart = false; // prefer SET_MESSAGE_INTERVAL
+            requestStreamsOnStart = false;
         }
 
-        _udp = new UdpClient(listenPort);
-        _defaultTx = new IPEndPoint(IPAddress.Parse(targetIp), targetPort);
-
         _running = true;
-        _rxThread = new Thread(RxLoop) { IsBackground = true };
-        _rxThread.Start();
 
-        // Send GCS heartbeat continuously (helps SITL treat us as active GCS)
+        if (transport == Transport.UDP)
+        {
+            _udp = new UdpClient(listenPort);
+            _defaultTx = new IPEndPoint(IPAddress.Parse(targetIp), targetPort);
+
+            _rxThread = new Thread(RxLoopUdp) { IsBackground = true };
+            _rxThread.Start();
+
+            Debug.Log($"[MAV] UDP started. RX={listenPort} defaultTX={targetIp}:{targetPort} replyToLastSender={replyToLastSender} autoTelemetry={autoConfigureTelemetry} forceSitlDefaults={forceSitlDefaults}");
+        }
+        else
+        {
+            _rxThread = new Thread(RxLoopTcp) { IsBackground = true };
+            _rxThread.Start();
+
+            Debug.Log($"[MAV] TCP starting. Will connect to {tcpHost}:{tcpPort} autoReconnect={tcpAutoReconnect}");
+        }
+
         InvokeRepeating(nameof(SendGcsHeartbeat), 0f, 1f);
 
-        // Optional: dump available packet builders once (helps when library fork differs)
         DumpPacketBuildersOnce();
 
         if (requestStreamsOnStart)
@@ -175,8 +225,6 @@ public class MavLinkUdpListener : MonoBehaviour
 
         if (autoConfigureTelemetry)
             Invoke(nameof(ConfigureTelemetry), 1.2f);
-
-        Debug.Log($"[MAV] UDP started. RX={listenPort} defaultTX={targetIp}:{targetPort} replyToLastSender={replyToLastSender} autoTelemetry={autoConfigureTelemetry} forceSitlDefaults={forceSitlDefaults}");
     }
 
     void OnDestroy()
@@ -187,26 +235,43 @@ public class MavLinkUdpListener : MonoBehaviour
 
         try
         {
+            _tcpStream?.Close();
+            _tcp?.Close();
+        }
+        catch { }
+
+        try
+        {
             if (_rxThread != null && _rxThread.IsAlive)
                 _rxThread.Join(300);
         }
         catch { }
 
         _udp = null;
+        _tcpStream = null;
+        _tcp = null;
         _rxThread = null;
     }
 
     void Update()
     {
-        // age of last RX, useful as a simple "link alive" indicator
         lastRxAgeMs = NowMs() - _lastRxMs;
 
         while (_rxQueue.TryDequeue(out var msg))
             HandleMessage(msg);
 
-        // Ensure telemetry gets configured as soon as we learn the correct RX/TX endpoint.
-        if (autoConfigureTelemetry && !_telemetryConfigured && (!replyToLastSender || _lastSender != null))
-            ConfigureTelemetry();
+        // Ensure telemetry gets configured as soon as link is usable.
+        if (autoConfigureTelemetry && !_telemetryConfigured)
+        {
+            if (transport == Transport.TCP)
+            {
+                if (_tcpConnected) ConfigureTelemetry();
+            }
+            else
+            {
+                if (!replyToLastSender || _lastSender != null) ConfigureTelemetry();
+            }
+        }
 
         // Resend GUIDED target ~10Hz (required for smooth offboard control)
         if (_hasTarget && _guided)
@@ -224,10 +289,10 @@ public class MavLinkUdpListener : MonoBehaviour
     {
         if (!showOnScreenHud) return;
 
-        GUILayout.BeginArea(new Rect(10, 10, 420, 170), GUI.skin.box);
+        GUILayout.BeginArea(new Rect(10, 10, 460, 170), GUI.skin.box);
         GUILayout.Label($"MAVLink link: {(IsLinkAlive() ? "OK" : "NO RX")}  age={lastRxAgeMs} ms");
+        GUILayout.Label($"Transport: {transport}  TX -> {CurrentTxLabel()}  (replyToLastSender={replyToLastSender})");
         GUILayout.Label($"Vehicle: sys={_vehSysId} comp={_vehCompId}  armed={_armed} guided={_guided}  base={_baseMode} custom={_customMode}");
-        GUILayout.Label($"TX -> {CurrentTxLabel()}  (replyToLastSender={replyToLastSender})");
         GUILayout.Label($"GPS: lat={gpsLatDeg:F7} lon={gpsLonDeg:F7} relAlt={gpsRelAltM:F1} m");
         GUILayout.Label($"LOCAL: N={localNed.x:F2}  E={localNed.y:F2}  D={localNed.z:F2}  (Unity up={localUnity.z:F2})");
         GUILayout.Label($"VFR: gs={groundspeedMps:F1} m/s  as={airspeedMps:F1} m/s  hdg={headingDeg:F0}°");
@@ -258,7 +323,7 @@ public class MavLinkUdpListener : MonoBehaviour
 
         _pingSentUsec[seq] = nowUsec;
         if (!SendMessage(MAVLink.MAVLINK_MSG_ID.PING, ping))
-            Debug.LogWarning("[UI] PING not sent (packet builder mismatch)");
+            Debug.LogWarning("[UI] PING not sent (packet builder mismatch or link down)");
         Debug.Log($"[UI] PING sent seq={seq}");
     }
 
@@ -283,7 +348,6 @@ public class MavLinkUdpListener : MonoBehaviour
 
     public void Takeoff()
     {
-        // ArduCopter: NAV_TAKEOFF (COMMAND_LONG), altitude in param7.
         SendCommandLong(MavCmd.NAV_TAKEOFF, p7: 5f);
         Debug.Log("[UI] TAKEOFF alt=5m");
     }
@@ -302,7 +366,7 @@ public class MavLinkUdpListener : MonoBehaviour
     {
         _activeTargetNed = ned;
         _hasTarget = true;
-        _lastSetpointMs = 0; // force immediate send
+        _lastSetpointMs = 0;
 
         SendLocalSetpoint(ned);
 
@@ -331,8 +395,6 @@ public class MavLinkUdpListener : MonoBehaviour
 
     private void RequestStreams()
     {
-        // REQUEST_DATA_STREAM is deprecated in MAVLink2, but ArduPilot still supports it.
-        // QGC nowadays prefers MAV_CMD_SET_MESSAGE_INTERVAL (see ConfigureTelemetry()).
         var req = new MAVLink.mavlink_request_data_stream_t
         {
             target_system = _vehSysId,
@@ -351,19 +413,29 @@ public class MavLinkUdpListener : MonoBehaviour
 
     private void ConfigureTelemetry()
     {
-        // Wait until we know the correct TX endpoint (SITL/MAVProxy uses ephemeral ports).
-        if (replyToLastSender && _lastSender == null)
+        if (_telemetryConfigured) return;
+
+        if (transport == Transport.UDP)
         {
-            Debug.Log("[GCS] Waiting for RX endpoint before configuring telemetry...");
-            Invoke(nameof(ConfigureTelemetry), 0.5f);
-            return;
+            if (replyToLastSender && _lastSender == null)
+            {
+                Debug.Log("[GCS] Waiting for RX endpoint before configuring telemetry...");
+                Invoke(nameof(ConfigureTelemetry), 0.5f);
+                return;
+            }
+        }
+        else
+        {
+            if (!_tcpConnected)
+            {
+                Debug.Log("[GCS] Waiting for TCP connect before configuring telemetry...");
+                Invoke(nameof(ConfigureTelemetry), 0.5f);
+                return;
+            }
         }
 
-        if (_telemetryConfigured) return;
         _telemetryConfigured = true;
 
-        // QGC-style: ask the autopilot to emit specific messages at chosen rates.
-        // Without this, ArduPilot may only send HEARTBEAT on extra links.
         SetMessageInterval(MAVLink.MAVLINK_MSG_ID.GLOBAL_POSITION_INT, rateGlobalPosHz);
         SetMessageInterval(MAVLink.MAVLINK_MSG_ID.LOCAL_POSITION_NED, rateLocalPosHz);
         SetMessageInterval(MAVLink.MAVLINK_MSG_ID.VFR_HUD, rateVfrHudHz);
@@ -373,10 +445,6 @@ public class MavLinkUdpListener : MonoBehaviour
 
     private void SetMessageInterval(MAVLink.MAVLINK_MSG_ID msgId, int rateHz)
     {
-        // MAV_CMD_SET_MESSAGE_INTERVAL (511):
-        // param1 = message id
-        // param2 = interval in microseconds
-        // param3 = (optional) response target, keep 0
         if (rateHz <= 0) rateHz = 1;
         float intervalUs = 1_000_000f / rateHz;
 
@@ -392,7 +460,6 @@ public class MavLinkUdpListener : MonoBehaviour
     private void SendCommandLong(ushort command,
         float p1 = 0, float p2 = 0, float p3 = 0, float p4 = 0, float p5 = 0, float p6 = 0, float p7 = 0)
     {
-        // If IDs are known, target them; otherwise broadcast 0,0.
         byte ts = (_vehSysId != 0) ? _vehSysId : (byte)0;
         byte tc = (_vehCompId != 0) ? _vehCompId : (byte)0;
 
@@ -417,20 +484,17 @@ public class MavLinkUdpListener : MonoBehaviour
 
     private void SendLocalSetpoint(Vector3 ned)
     {
-        // Use position XYZ only; ignore velocity/accel/yaw.
         var sp = new MAVLink.mavlink_set_position_target_local_ned_t
         {
             time_boot_ms = (uint)(Time.time * 1000),
             target_system = _vehSysId,
             target_component = _vehCompId,
-            // NOTE: LOCAL_NED is the most widely supported by ArduPilot for GUIDED position targets.
-            // LOCAL_OFFSET_NED is not always honored.
             coordinate_frame = (byte)MAVLink.MAV_FRAME.LOCAL_NED,
 
             type_mask = (ushort)(
-                (1 << 3) | (1 << 4) | (1 << 5) |   // ignore vx,vy,vz
-                (1 << 6) | (1 << 7) | (1 << 8) |   // ignore ax,ay,az
-                (1 << 10) | (1 << 11)              // ignore yaw, yaw_rate
+                (1 << 3) | (1 << 4) | (1 << 5) |
+                (1 << 6) | (1 << 7) | (1 << 8) |
+                (1 << 10) | (1 << 11)
             ),
 
             x = ned.x,
@@ -451,12 +515,38 @@ public class MavLinkUdpListener : MonoBehaviour
             return false;
         }
 
+        if (transport == Transport.TCP)
+        {
+            if (!_tcpConnected || _tcpStream == null)
+            {
+                if (logTx) Debug.LogWarning($"[TX] TCP not connected. Dropping {id}.");
+                return false;
+            }
+
+            try
+            {
+                _tcpStream.Write(packet, 0, packet.Length);
+                _tcpStream.Flush();
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"[TCP] Send error: {e.Message}");
+                _tcpConnected = false;
+                return false;
+            }
+
+            if (logTx)
+                Debug.Log($"[TX] {id} bytes={packet.Length} seq={(byte)(_seq - 1)}");
+
+            return true;
+        }
+
         IPEndPoint dst = _defaultTx;
         if (replyToLastSender)
         {
             if (_lastSender != null) dst = _lastSender;
             else
-                Debug.LogWarning($"[TX] No RX endpoint learned yet. Using default TX {targetIp}:{targetPort}. (If commands don't work, wait for RX or enable forceSitlDefaults.)");
+                Debug.LogWarning($"[TX] No RX endpoint learned yet. Using default TX {targetIp}:{targetPort}. (If commands don't work, wait for RX or keep replyToLastSender=true.)");
         }
 
         if (logTx)
@@ -480,7 +570,7 @@ public class MavLinkUdpListener : MonoBehaviour
 
     // ============================ MAVLINK RX ============================
 
-    private void RxLoop()
+    private void RxLoopUdp()
     {
         IPEndPoint ep = new IPEndPoint(IPAddress.Any, 0);
 
@@ -490,7 +580,6 @@ public class MavLinkUdpListener : MonoBehaviour
             {
                 byte[] data = _udp.Receive(ref ep);
 
-                // Clone endpoint to avoid any ref-aliasing weirdness
                 var learned = new IPEndPoint(ep.Address, ep.Port);
                 bool senderChanged = (_lastSender == null) || !_lastSender.Equals(learned);
 
@@ -525,9 +614,87 @@ public class MavLinkUdpListener : MonoBehaviour
         }
     }
 
+    private void RxLoopTcp()
+    {
+        while (_running)
+        {
+            if (!_tcpConnected)
+            {
+                TryConnectTcp();
+
+                if (!_tcpConnected)
+                {
+                    if (!tcpAutoReconnect) return;
+                    Thread.Sleep((int)(Mathf.Max(0.2f, tcpReconnectDelay) * 1000f));
+                    continue;
+                }
+            }
+
+            try
+            {
+                int n = _tcpStream.Read(_tcpReadTmp, 0, _tcpReadTmp.Length);
+                if (n <= 0)
+                {
+                    _tcpConnected = false;
+                    continue;
+                }
+
+                _lastRxMs = NowMs();
+
+                lock (_tcpRxBuffer)
+                {
+                    for (int i = 0; i < n; i++)
+                        _tcpRxBuffer.Add(_tcpReadTmp[i]);
+
+                    ParseStreamBuffer(_tcpRxBuffer);
+                }
+            }
+            catch (IOException)
+            {
+                _tcpConnected = false;
+            }
+            catch (ObjectDisposedException)
+            {
+                _tcpConnected = false;
+            }
+            catch (Exception e)
+            {
+                if (_running)
+                    Debug.LogWarning($"[TCP] RX error: {e.Message}");
+                _tcpConnected = false;
+            }
+
+            if (!_tcpConnected)
+            {
+                try { _tcpStream?.Close(); } catch { }
+                try { _tcp?.Close(); } catch { }
+                _tcpStream = null;
+                _tcp = null;
+            }
+        }
+    }
+
+    private void TryConnectTcp()
+    {
+        try
+        {
+            _tcp = new TcpClient();
+            _tcp.NoDelay = true;
+            _tcp.Connect(tcpHost, tcpPort);
+            _tcpStream = _tcp.GetStream();
+            _tcpConnected = true;
+            Debug.Log($"[MAV] TCP connected to {tcpHost}:{tcpPort}");
+        }
+        catch (Exception e)
+        {
+            _tcpConnected = false;
+            if (_running)
+                Debug.LogWarning($"[MAV] TCP connect failed: {e.Message}");
+        }
+    }
+
     private void ParseDatagram(byte[] data)
     {
-        // Resync scanner (works for MAVLink1 0xFE and MAVLink2 0xFD)
         int i = 0;
         while (i < data.Length)
         {
@@ -549,6 +716,43 @@ public class MavLinkUdpListener : MonoBehaviour
         }
     }
 
+    private void ParseStreamBuffer(List<byte> buf)
+    {
+        if (buf.Count == 0) return;
+
+        // Copy to array for fast scanning; remove consumed bytes afterwards.
+        byte[] arr = buf.ToArray();
+        int i = 0;
+
+        while (i < arr.Length)
+        {
+            byte b = arr[i];
+            if (b != 0xFE && b != 0xFD) { i++; continue; }
+
+            if (arr.Length - i < 8) break;
+
+            using (var ms = new MemoryStream(arr, i, arr.Length - i, false))
+            {
+                var msg = _parser.ReadPacket(ms);
+                if (msg != null)
+                {
+                    _rxQueue.Enqueue(msg);
+                    i += (int)ms.Position;
+                    continue;
+                }
+            }
+
+            i++;
+        }
+
+        if (i > 0)
+            buf.RemoveRange(0, Mathf.Min(i, buf.Count));
+
+        // Safety: keep buffer bounded if stream is noisy.
+        if (buf.Count > 200000)
+            buf.RemoveRange(0, buf.Count - 50000);
+    }
+
     private void HandleMessage(MAVLink.MAVLinkMessage msg)
     {
         // Ignore own loopback
@@ -559,7 +763,6 @@ public class MavLinkUdpListener : MonoBehaviour
         {
             case MAVLink.MAVLINK_MSG_ID.HEARTBEAT:
             {
-                // Lock vehicle IDs on heartbeat
                 _vehSysId = msg.sysid;
                 _vehCompId = msg.compid;
 
@@ -568,7 +771,7 @@ public class MavLinkUdpListener : MonoBehaviour
                 _customMode = hb.custom_mode;
 
                 _armed = (_baseMode & (byte)MAVLink.MAV_MODE_FLAG.SAFETY_ARMED) != 0;
-                _guided = ((_baseMode & (byte)MAVLink.MAV_MODE_FLAG.CUSTOM_MODE_ENABLED) != 0) && (_customMode == 4u); // ArduCopter GUIDED
+                _guided = ((_baseMode & (byte)MAVLink.MAV_MODE_FLAG.CUSTOM_MODE_ENABLED) != 0) && (_customMode == 4u);
 
                 if (logRxHeartbeat)
                     Debug.Log($"[RX] HEARTBEAT sys={_vehSysId} comp={_vehCompId} base={_baseMode} custom={_customMode} armed={_armed} guided={_guided}");
@@ -615,9 +818,7 @@ public class MavLinkUdpListener : MonoBehaviour
             {
                 var lp = (MAVLink.mavlink_local_position_ned_t)msg.data;
 
-                // NED: z positive DOWN
                 localNed = new Vector3(lp.x, lp.y, lp.z);
-                // convenient for Unity: Up positive
                 localUnity = new Vector3(lp.x, lp.y, -lp.z);
 
                 if (logRxPosition)
@@ -641,7 +842,6 @@ public class MavLinkUdpListener : MonoBehaviour
 
             case MAVLink.MAVLINK_MSG_ID.STATUSTEXT:
             {
-                // This is crucial: ArduPilot tells you *why* arm/mode/takeoff was denied.
                 try
                 {
                     var st = (MAVLink.mavlink_statustext_t)msg.data;
@@ -696,11 +896,9 @@ public class MavLinkUdpListener : MonoBehaviour
 
     private byte[] BuildPacket(MAVLink.MAVLINK_MSG_ID id, object payload, bool preferV2)
     {
-        // 1) Try preferred version
         if (TryBuildPacket(id, payload, preferV2, out var pkt))
             return pkt;
 
-        // 2) Fallback V2 -> V1 automatically
         if (preferV2 && TryBuildPacket(id, payload, false, out pkt))
         {
             if (!_warnedMavlink2Fallback)
@@ -711,7 +909,6 @@ public class MavLinkUdpListener : MonoBehaviour
             return pkt;
         }
 
-        // 3) Nothing worked -> print methods once to help you map the right signature
         DumpPacketBuildersOnce();
         Debug.LogError("[MAV] No compatible packet builder overload found in this MAVLink library fork.");
         return null;
@@ -723,11 +920,9 @@ public class MavLinkUdpListener : MonoBehaviour
 
         var methods = typeof(MAVLink.MavlinkParse).GetMethods(BindingFlags.Instance | BindingFlags.Public);
 
-        // Pass 1: try likely names (fast)
         if (TryBuildByNameHints(methods, id, payload, mavlink2, out packet))
             return true;
 
-        // Pass 2: try any byte[] method that starts with (msgid, payload, ...)
         foreach (var m in methods)
         {
             if (m.ReturnType != typeof(byte[])) continue;
@@ -744,8 +939,6 @@ public class MavLinkUdpListener : MonoBehaviour
     {
         packet = null;
 
-        // Different forks name these differently.
-        // We'll try a few common variants.
         string[] preferredNames = mavlink2
             ? new[] { "GenerateMAVLinkPacket20", "GenerateMAVLinkPacket2", "GenerateMavlinkPacket20", "GenerateMavlinkPacket2", "GenerateMAVLinkPacket" }
             : new[] { "GenerateMAVLinkPacket10", "GenerateMAVLinkPacket1", "GenerateMavlinkPacket10", "GenerateMavlinkPacket1", "GenerateMAVLinkPacket" };
@@ -770,7 +963,6 @@ public class MavLinkUdpListener : MonoBehaviour
         var p = m.GetParameters();
         if (p.Length < 2) return false;
 
-        // 1st param: MAVLINK_MSG_ID or integer-ish msgid
         bool okMsgId = (p[0].ParameterType == typeof(MAVLink.MAVLINK_MSG_ID))
             || (p[0].ParameterType == typeof(byte))
             || (p[0].ParameterType == typeof(ushort))
@@ -778,10 +970,6 @@ public class MavLinkUdpListener : MonoBehaviour
 
         if (!okMsgId) return false;
 
-        // 2nd param should accept payload
-        if (p[1].ParameterType == typeof(object)) return true;
-
-        // Or a specific mavlink_* struct type.
         return true;
     }
 
@@ -810,12 +998,10 @@ public class MavLinkUdpListener : MonoBehaviour
         else
             return false;
 
-        // Precompute a sequence value (only consume seq when we actually assign it)
         Func<byte> nextSeq8 = () => _seq++;
         Func<ushort> nextSeq16 = () => (ushort)(_seq++);
         Func<int> nextSeq32 = () => (int)(_seq++);
 
-        // First try: fill using parameter names
         bool assignedSeq = false;
         for (int i = 2; i < p.Length; i++)
         {
@@ -825,7 +1011,7 @@ public class MavLinkUdpListener : MonoBehaviour
             if (t == typeof(bool))
             {
                 if (n.Contains("mavlink2") || n.Contains("v2")) args[i] = mavlink2;
-                else args[i] = false; // signing off
+                else args[i] = false;
                 continue;
             }
 
@@ -856,7 +1042,6 @@ public class MavLinkUdpListener : MonoBehaviour
             return false;
         }
 
-        // If no seq assigned by name, apply position-based fallback for the most common signatures
         if (!assignedSeq)
         {
             int tail = p.Length - 2;
