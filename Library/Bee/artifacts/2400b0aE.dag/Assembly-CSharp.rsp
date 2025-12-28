@@ -419,6 +419,7 @@
 -analyzer:"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Assets/LinkType.cs"
 "Assets/MavLinkUdpListener.cs"
 "Assets/Scripts/Mavlink/MAVLinkMessage.cs"
 "Assets/Scripts/Mavlink/MAVLinkParam.cs"
@@ -461,6 +462,7 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
+"Assets/VehicleSlot.cs"
 -langversion:9.0
 /unsafe+
 /deterministic

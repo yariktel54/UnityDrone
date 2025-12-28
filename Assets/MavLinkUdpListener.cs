@@ -47,105 +47,15 @@ using Debug = UnityEngine.Debug;
 
 public class MavLinkUdpListener : MonoBehaviour
 {
-    public enum LinkType
-    {
-        None = 0,
-        UDP = 1,
-        TCP = 2
-    }
-
-    [Serializable]
-    public class VehicleSlot
-    {
-        [Header("Slot")]
-        public string label = "Drone";
-        public LinkType linkType = LinkType.None;
-
-        [Header("UDP (per-slot)")]
-        [Tooltip("Unity listens here. Configure SITL/MAVProxy to send to this port: --out udp:127.0.0.1:<listenPort>")]
-        public int listenPort = 14551;
-
-        [Tooltip("Fallback TX if we haven't learned the sender endpoint yet.")]
-        public string defaultTargetIp = "127.0.0.1";
-        public int defaultTargetPort = 14550;
-
-        [Tooltip("If true: send outgoing packets to the last UDP endpoint seen FROM this slot (recommended for SITL/MAVProxy).")]
-        public bool replyToLastSender = true;
-
-        [Header("TCP (per-slot)")]
-        public string tcpHost = "127.0.0.1";
-        public int tcpPort = 5770;
-        public bool tcpAutoReconnect = true;
-        public float tcpReconnectDelay = 1.0f;
-
-        [Header("Runtime (read-only)")]
-        public byte vehSysId = 1;
-        public byte vehCompId = 1;
-        public byte baseMode;
-        public uint customMode;
-        public bool armed;
-        public bool guided;
-
-        public double gpsLatDeg;
-        public double gpsLonDeg;
-        public float gpsRelAltM;
-
-        public Vector3 localNed;
-        public Vector3 localUnity;
-
-        public float groundspeedMps;
-        public float airspeedMps;
-        public float headingDeg;
-
-        public float rollDeg;
-        public float pitchDeg;
-        public float yawDeg;
-
-        public float pressureHpa;
-        public float windSpeedMps;
-        public float windDirDeg;
-        public float windSpeedZ;
-
-        public long lastRxAgeMs;
-
-        // ---------------- internal (not serialized) ----------------
-        [NonSerialized] public MAVLink.MavlinkParse parser;
-
-        [NonSerialized] public UdpClient udp;
-        [NonSerialized] public IPEndPoint udpDefaultTx;
-        [NonSerialized] public IPEndPoint udpLastSender;
-
-        [NonSerialized] public TcpClient tcp;
-        [NonSerialized] public NetworkStream tcpStream;
-        [NonSerialized] public bool tcpConnected;
-        [NonSerialized] public readonly byte[] tcpReadTmp = new byte[8192];
-        [NonSerialized] public readonly List<byte> tcpRxBuffer = new List<byte>(16384);
-
-        [NonSerialized] public Thread rxThread;
-        [NonSerialized] public readonly ConcurrentQueue<MAVLink.MAVLinkMessage> rxQueue = new ConcurrentQueue<MAVLink.MAVLinkMessage>();
-
-        [NonSerialized] public byte seq;
-        [NonSerialized] public long lastRxMs;
-        [NonSerialized] public bool telemetryConfigured;
-
-        // Guided streaming state
-        [NonSerialized] public Vector3 activeTargetNed;
-        [NonSerialized] public bool hasTarget;
-        [NonSerialized] public long lastSetpointMs;
-
-        // Ping tracking (optional)
-        [NonSerialized] public uint pingSeq = 1;
-        [NonSerialized] public readonly Dictionary<uint, ulong> pingSentUsec = new Dictionary<uint, ulong>();
-
-        public bool Enabled => linkType != LinkType.None;
-    }
-
     [Header("Multi-vehicle")]
     [Tooltip("Slot index selected for control commands (ARM/TAKEOFF/etc). Telemetry continues for all enabled slots.")]
     public int activeSlotIndex = 0;
 
+    [Tooltip("Slot index used ONLY for HUD/telemetry display. Does NOT affect control commands.")]
+    public int hudSlotIndex = 0;
+
     [Tooltip("Up to 10 slots. Set linkType=None for unused slots.")]
-    public VehicleSlot[] slots = new VehicleSlot[10];
+    public VehicleSlot[] slots;
 
     [Header("GCS identity")]
     public byte gcsSysId = 255;
@@ -185,6 +95,12 @@ public class MavLinkUdpListener : MonoBehaviour
 
     // ============================ INTERNAL ============================
 
+    // MAVLink framing bytes ("start sign"):
+    // - MAVLink1 packets start with 0xFE
+    // - MAVLink2 packets start with 0xFD
+    private const byte MAVLINK1_STX = 0xFE;
+    private const byte MAVLINK2_STX = 0xFD;
+
     private volatile bool _running;
 
     private bool _dumpedPacketBuilders;
@@ -197,27 +113,31 @@ public class MavLinkUdpListener : MonoBehaviour
 
     void Awake()
     {
-        // Ensure array size = 10 and not null elements.
-        if (slots == null || slots.Length != 10)
+        slots = GetComponentsInChildren<VehicleSlot>(true);
+
+        if (slots == null) slots = Array.Empty<VehicleSlot>();
+
+        // Важливо: порядок слотів = порядок у Hierarchy (sibling index)
+        Array.Sort(slots, (a, b) =>
+            a.transform.GetSiblingIndex().CompareTo(b.transform.GetSiblingIndex()));
+
+        // Підстрахуємось: якщо label порожній — підставимо ім'я об'єкта
+        for (int i = 0; i < slots.Length; i++)
         {
-            var arr = new VehicleSlot[10];
-            for (int i = 0; i < 10; i++) arr[i] = new VehicleSlot { label = $"Drone {i + 1}" };
-            slots = arr;
-        }
-        else
-        {
-            for (int i = 0; i < slots.Length; i++)
-            {
-                if (slots[i] == null) slots[i] = new VehicleSlot { label = $"Drone {i + 1}" };
-                if (string.IsNullOrWhiteSpace(slots[i].label)) slots[i].label = $"Drone {i + 1}";
-            }
+            if (string.IsNullOrWhiteSpace(slots[i].label))
+                slots[i].label = slots[i].gameObject.name;
         }
 
-        activeSlotIndex = Mathf.Clamp(activeSlotIndex, 0, slots.Length - 1);
+        if (slots.Length == 0)
+            Debug.LogWarning("[MAV] No VehicleSlot children found. Create child objects under this GameObject and add VehicleSlot component.");
+
+        activeSlotIndex = Mathf.Clamp(activeSlotIndex, 0, Mathf.Max(0, slots.Length - 1));
+        hudSlotIndex = Mathf.Clamp(hudSlotIndex, 0, slots.Length - 1);
     }
 
     void Start()
     {
+        if (slots == null) slots = Array.Empty<VehicleSlot>();
         _running = true;
 
         // Start each enabled slot.
@@ -276,11 +196,24 @@ public class MavLinkUdpListener : MonoBehaviour
     {
         if (!showOnScreenHud) return;
 
-        var a = GetActiveSlot();
-        string activeName = a != null ? a.label : "(none)";
+        var ctrl = GetActiveSlot();
+        string ctrlName = ctrl != null ? ctrl.label : "(none)";
 
-        GUILayout.BeginArea(new Rect(10, 10, 620, 260), GUI.skin.box);
-        GUILayout.Label($"Active slot: #{activeSlotIndex + 1}  {activeName}");
+        // 'a' тепер буде HUD-слотом (для відображення), щоб нижче в HUD коді можна було
+        // як і раніше писати a.xxx і нічого не ламати
+        var a = GetHudSlot();
+        string hudName = a != null ? a.label : "(none)";
+
+        float margin = 10f;
+        float w = Mathf.Min(620f, Screen.width - margin * 2f);
+        float h = Mathf.Min(260f, Screen.height - margin * 2f);
+        w = Mathf.Max(220f, w);
+        h = Mathf.Max(140f, h);
+
+        GUILayout.BeginArea(new Rect(margin, margin, w, h), GUI.skin.box);
+
+        GUILayout.Label($"CONTROL slot: #{activeSlotIndex + 1}  {ctrlName}");
+        GUILayout.Label($"HUD slot:     #{hudSlotIndex + 1}  {hudName}");
 
         // Quick selector (works without Unity UI). If you use a Dropdown, call SetActiveSlot(index) instead.
         GUILayout.BeginHorizontal();
@@ -288,8 +221,9 @@ public class MavLinkUdpListener : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             if (GUILayout.Button((i + 1).ToString(), GUILayout.Width(36)))
-                SetActiveSlot(i);
+                SetHudSlot(i);
         }
+
         GUILayout.EndHorizontal();
 
         GUILayout.Space(6);
@@ -318,7 +252,7 @@ public class MavLinkUdpListener : MonoBehaviour
         }
         else
         {
-            GUILayout.Label("Active slot is disabled (None). Enable it in Inspector.");
+            GUILayout.Label("HUD slot is disabled (None). Enable it in Inspector.");
         }
 
         GUILayout.Space(8);
@@ -346,6 +280,12 @@ public class MavLinkUdpListener : MonoBehaviour
     {
         activeSlotIndex = Mathf.Clamp(index, 0, slots.Length - 1);
         Debug.Log($"[UI] Active slot set to #{activeSlotIndex + 1} ({slots[activeSlotIndex].label})");
+    }
+
+    public void SetHudSlot(int index)
+    {
+        hudSlotIndex = Mathf.Clamp(index, 0, slots.Length - 1);
+        Debug.Log($"[HUD] HUD slot set to #{hudSlotIndex + 1} ({slots[hudSlotIndex].label})");
     }
 
     // Buttons: these always control ACTIVE slot.
@@ -435,6 +375,13 @@ public class MavLinkUdpListener : MonoBehaviour
         return slots[i];
     }
 
+    VehicleSlot GetHudSlot()
+    {
+        if (slots == null || slots.Length == 0) return null;
+        int i = Mathf.Clamp(hudSlotIndex, 0, slots.Length - 1);
+        return slots[i];
+    }
+
     // ============================ CONTROL (per-slot) ============================
 
     private void Arm(int slotIndex)
@@ -499,19 +446,42 @@ public class MavLinkUdpListener : MonoBehaviour
     {
         if (s == null || !s.Enabled)
         {
-            Debug.LogWarning($"[S{slotIndex}] Slot disabled (None)");
+            Debug.LogWarning($"[S{slotIndex + 1}] Slot disabled (None). Command NOT sent.");
             return false;
         }
 
-        if (s.linkType == LinkType.TCP && !s.tcpConnected)
+        if (s.linkType == LinkType.TCP)
         {
-            Debug.LogWarning($"[S{slotIndex}] TCP not connected.");
-            return false;
+            if (!s.tcpConnected || s.tcpStream == null)
+            {
+                Debug.LogWarning($"[S{slotIndex + 1}] TCP not connected. Command NOT sent.");
+                return false;
+            }
+            return true;
         }
 
-        // UDP can still send with fallback target if last sender isn't learned yet.
-        return true;
+        if (s.linkType == LinkType.UDP)
+        {
+            if (s.udp == null)
+            {
+                Debug.LogWarning($"[S{slotIndex + 1}] UDP not started yet (udp==null). Command NOT sent.");
+                return false;
+            }
+
+            if (s.replyToLastSender && s.udpLastSender == null && !s.allowFallbackBeforeRx)
+            {
+                Debug.LogWarning(
+                    $"[S{slotIndex + 1}] UDP lastSender unknown (no RX yet). Command NOT sent. " +
+                    $"(Enable allowFallbackBeforeRx to send to {s.defaultTargetIp}:{s.defaultTargetPort})"
+                );
+                return false;
+            }
+            return true;
+        }
+
+        return false;
     }
+
 
     // ============================ HEARTBEATS + TELEMETRY SETUP (all slots) ============================
 
@@ -805,7 +775,10 @@ public class MavLinkUdpListener : MonoBehaviour
         while (i < data.Length)
         {
             byte b = data[i];
-            if (b != 0xFE && b != 0xFD) { i++; continue; }
+
+            // Fast resync: MAVLink packets always start with STX (0xFE for v1, 0xFD for v2).
+            // If current byte isn't STX, skip it and keep searching.
+            if (b != MAVLINK1_STX && b != MAVLINK2_STX) { i++; continue; }
 
             using (var ms = new MemoryStream(data, i, data.Length - i, false))
             {
@@ -832,7 +805,9 @@ public class MavLinkUdpListener : MonoBehaviour
         while (i < arr.Length)
         {
             byte b = arr[i];
-            if (b != 0xFE && b != 0xFD) { i++; continue; }
+
+            // Same fast resync as UDP: only try parsing when we are at an STX byte.
+            if (b != MAVLINK1_STX && b != MAVLINK2_STX) { i++; continue; }
 
             if (arr.Length - i < 8) break;
 
