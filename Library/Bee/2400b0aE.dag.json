@@ -484,7 +484,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 107,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -4845,7 +4845,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 66668,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -6305,7 +6305,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 125828,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -8016,7 +8016,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 206714,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -9286,7 +9286,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 263299,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -10470,7 +10470,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 316924,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -12379,7 +12379,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 411459,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -13488,7 +13488,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 462555,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -14607,7 +14607,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 514114,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -15825,7 +15825,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 570728,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -17860,7 +17860,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 670102,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -19060,7 +19060,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 725810,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -20238,7 +20238,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 780215,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -21420,7 +21420,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 835493,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -22580,7 +22580,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 889461,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -23839,7 +23839,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 947373,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -25047,7 +25047,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1003348,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -26235,7 +26235,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1057034,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -27385,7 +27385,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1109016,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -28504,7 +28504,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1160435,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -29590,7 +29590,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1210211,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -30852,7 +30852,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1268214,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -32014,7 +32014,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1321852,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -33318,7 +33318,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1379520,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -34577,7 +34577,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1435767,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -36307,7 +36307,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1515247,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -38278,7 +38278,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1623147,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -39570,7 +39570,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1681684,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -41692,7 +41692,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1794876,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -43615,7 +43615,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1898041,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -44724,7 +44724,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1947832,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -46262,7 +46262,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2023188,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -47443,7 +47443,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2077951,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -48695,7 +48695,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2133519,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -50013,7 +50013,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2196104,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -51227,7 +51227,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2250510,
       "PayloadLength": 29,
-      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink data",
+      "PayloadDebugContentSnippet": "/home/yariktel54/MAVlink_data",
       "Inputs": [],
       "InputFlags": [],
       "Outputs": [
@@ -54306,7 +54306,7 @@
     {
       "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json",
       "DisplayName": "Extracting script serialization layouts",
-      "Action": "\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/netcorerun/netcorerun\" \"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Tools/BuildPipeline/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Assembly-CSharp.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.InputSystem.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.InputSystem.ForUI.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.InputSystem.TestFramework.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.004.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.Multiplayer.Center.Common.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.Timeline.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.VisualScripting.DocCodeExamples.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies/UnityEngine.UI.dll\" -a=\"/home/yariktel54/MAVlink data/Library/PackageCache/com.unity.ext.nunit@ec2d0043d6fc/net40/unity-custom/nunit.framework.dll\" -a=\"/home/yariktel54/MAVlink data/Library/PackageCache/com.unity.testtools.codecoverage@e4e5058206c0/lib/ReportGenerator/ReportGeneratorMerged.dll\" -a=\"/home/yariktel54/MAVlink data/Library/PackageCache/com.unity.visualscripting@191c0d7e3b69/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Managed/UnityEngine\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/EditorExtensions\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/Extensions/2.0.0\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/ref/2.1.0\" -s=\"/home/yariktel54/MAVlink data/Library/ScriptAssemblies\" -s=\"/home/yariktel54/MAVlink data/Library/PackageCache/com.unity.ext.nunit@ec2d0043d6fc/net40/unity-custom\" -s=\"/home/yariktel54/MAVlink data/Library/PackageCache/com.unity.testtools.codecoverage@e4e5058206c0/lib/ReportGenerator\" -s=\"/home/yariktel54/MAVlink data/Library/PackageCache/com.unity.visualscripting@191c0d7e3b69/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
+      "Action": "\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/netcorerun/netcorerun\" \"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Tools/BuildPipeline/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Assembly-CSharp.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.InputSystem.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.InputSystem.ForUI.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.InputSystem.TestFramework.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.004.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.Multiplayer.Center.Common.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.Timeline.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.VisualScripting.DocCodeExamples.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies/UnityEngine.UI.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/PackageCache/com.unity.ext.nunit@ec2d0043d6fc/net40/unity-custom/nunit.framework.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/PackageCache/com.unity.testtools.codecoverage@e4e5058206c0/lib/ReportGenerator/ReportGeneratorMerged.dll\" -a=\"/home/yariktel54/MAVlink_data/Library/PackageCache/com.unity.visualscripting@191c0d7e3b69/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Managed/UnityEngine\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/EditorExtensions\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/Extensions/2.0.0\" -s=\"/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/NetStandard/ref/2.1.0\" -s=\"/home/yariktel54/MAVlink_data/Library/ScriptAssemblies\" -s=\"/home/yariktel54/MAVlink_data/Library/PackageCache/com.unity.ext.nunit@ec2d0043d6fc/net40/unity-custom\" -s=\"/home/yariktel54/MAVlink_data/Library/PackageCache/com.unity.testtools.codecoverage@e4e5058206c0/lib/ReportGenerator\" -s=\"/home/yariktel54/MAVlink_data/Library/PackageCache/com.unity.visualscripting@191c0d7e3b69/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
       "Inputs": [
         "/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/netcorerun/netcorerun",
         "/home/yariktel54/Unity/Hub/Editor/6000.3.1f1/Editor/Data/Tools/BuildPipeline/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
@@ -54654,6 +54654,6 @@
   "SharedResources": [],
   "Scanners": [],
   "Identifier": "Library/Bee/2400b0aE.dag.json",
-  "PayloadsFile": "/home/yariktel54/MAVlink data/Library/Bee/2400b0aE.dag.payloads",
+  "PayloadsFile": "/home/yariktel54/MAVlink_data/Library/Bee/2400b0aE.dag.payloads",
   "RelativePathToRoot": "../.."
 }

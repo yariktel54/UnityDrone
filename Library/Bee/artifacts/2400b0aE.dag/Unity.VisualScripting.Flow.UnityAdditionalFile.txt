@@ -1,1 +1,1 @@
-/home/yariktel54/MAVlink data
+/home/yariktel54/MAVlink_data

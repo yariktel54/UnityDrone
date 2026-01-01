@@ -171,29 +171,48 @@ MonoBehaviour:
   replyToLastSender: 1
   allowFallbackBeforeRx: 0
   tcpHost: 127.0.0.1
-  tcpPort: 5770
+  tcpPort: 6000
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 1
+  autoSlotNumberFromSibling: 1
+  slotNumber: 1
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5.2
+  simBattVoltage: 16.8
+  sitlWindEnabled: 1
+  sitlWindSpeedMps: 2
+  sitlWindDirDeg: 90
+  sitlWindTurb: 0.3
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
   customMode: 0
   armed: 0
   guided: 0
-  gpsLatDeg: 0
-  gpsLonDeg: 0
-  gpsRelAltM: 0
+  gpsLatDeg: 50.345
+  gpsLonDeg: 30.8947
+  gpsRelAltM: 130
   localNed: {x: 0, y: 0, z: 0}
   localUnity: {x: 0, y: 0, z: 0}
   groundspeedMps: 0
   airspeedMps: 0
-  headingDeg: 0
+  headingDeg: 90
   rollDeg: 0
   pitchDeg: 0
-  yawDeg: 0
-  pressureHpa: 0
-  windSpeedMps: 0
-  windDirDeg: 0
+  yawDeg: 90
+  pressureHpa: 1013.25
+  windSpeedMps: 2
+  windDirDeg: 90
   windSpeedZ: 0
   lastRxAgeMs: 0
 --- !u!1 &145749153
@@ -251,6 +270,25 @@ MonoBehaviour:
   tcpPort: 6000
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 1
+  autoSlotNumberFromSibling: 1
+  slotNumber: 1
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5
+  simBattVoltage: 16
+  sitlWindEnabled: 0
+  sitlWindSpeedMps: 0
+  sitlWindDirDeg: 0
+  sitlWindTurb: 0
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
@@ -2018,26 +2056,45 @@ MonoBehaviour:
   tcpPort: 6000
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 2
+  autoSlotNumberFromSibling: 1
+  slotNumber: 2
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5.2
+  simBattVoltage: 16.8
+  sitlWindEnabled: 1
+  sitlWindSpeedMps: 2
+  sitlWindDirDeg: 90
+  sitlWindTurb: 0.3
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
   customMode: 0
   armed: 0
   guided: 0
-  gpsLatDeg: 0
-  gpsLonDeg: 0
-  gpsRelAltM: 0
+  gpsLatDeg: 50.345
+  gpsLonDeg: 30.8947
+  gpsRelAltM: 130
   localNed: {x: 0, y: 0, z: 0}
   localUnity: {x: 0, y: 0, z: 0}
   groundspeedMps: 0
   airspeedMps: 0
-  headingDeg: 0
+  headingDeg: 90
   rollDeg: 0
   pitchDeg: 0
-  yawDeg: 0
-  pressureHpa: 0
-  windSpeedMps: 0
-  windDirDeg: 0
+  yawDeg: 90
+  pressureHpa: 1013.25
+  windSpeedMps: 2
+  windDirDeg: 90
   windSpeedZ: 0
   lastRxAgeMs: 0
 --- !u!1 &963194225
@@ -2746,6 +2803,25 @@ MonoBehaviour:
   tcpPort: 5770
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 1
+  autoSlotNumberFromSibling: 1
+  slotNumber: 1
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5
+  simBattVoltage: 16
+  sitlWindEnabled: 0
+  sitlWindSpeedMps: 0
+  sitlWindDirDeg: 0
+  sitlWindTurb: 0
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
@@ -2823,6 +2899,25 @@ MonoBehaviour:
   tcpPort: 5770
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 1
+  autoSlotNumberFromSibling: 1
+  slotNumber: 1
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5
+  simBattVoltage: 16
+  sitlWindEnabled: 0
+  sitlWindSpeedMps: 0
+  sitlWindDirDeg: 0
+  sitlWindTurb: 0
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
@@ -2987,6 +3082,25 @@ MonoBehaviour:
   tcpPort: 5770
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 1
+  autoSlotNumberFromSibling: 1
+  slotNumber: 1
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5
+  simBattVoltage: 16
+  sitlWindEnabled: 0
+  sitlWindSpeedMps: 0
+  sitlWindDirDeg: 0
+  sitlWindTurb: 0
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
@@ -3782,6 +3896,25 @@ MonoBehaviour:
   tcpPort: 5770
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 1
+  autoSlotNumberFromSibling: 1
+  slotNumber: 1
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5
+  simBattVoltage: 16
+  sitlWindEnabled: 0
+  sitlWindSpeedMps: 0
+  sitlWindDirDeg: 0
+  sitlWindTurb: 0
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
@@ -3859,6 +3992,25 @@ MonoBehaviour:
   tcpPort: 5770
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 1
+  autoSlotNumberFromSibling: 1
+  slotNumber: 1
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5
+  simBattVoltage: 16
+  sitlWindEnabled: 0
+  sitlWindSpeedMps: 0
+  sitlWindDirDeg: 0
+  sitlWindTurb: 0
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
@@ -4212,6 +4364,25 @@ MonoBehaviour:
   tcpPort: 5770
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 1
+  autoSlotNumberFromSibling: 1
+  slotNumber: 1
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5
+  simBattVoltage: 16
+  sitlWindEnabled: 0
+  sitlWindSpeedMps: 0
+  sitlWindDirDeg: 0
+  sitlWindTurb: 0
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
@@ -4728,6 +4899,25 @@ MonoBehaviour:
   tcpPort: 5770
   tcpAutoReconnect: 1
   tcpReconnectDelay: 1
+  generateParmOnStart: 1
+  generateParmInBuild: 0
+  parmFolderInProjectRoot: SITLParms
+  parmFileNameOverride: 
+  sitlSysId: 1
+  autoSlotNumberFromSibling: 1
+  slotNumber: 1
+  writeFrameParams: 1
+  frameClass: 1
+  frameType: 1
+  writeBatterySimParams: 1
+  simBattCapacityAh: 5
+  simBattVoltage: 16
+  sitlWindEnabled: 0
+  sitlWindSpeedMps: 0
+  sitlWindDirDeg: 0
+  sitlWindTurb: 0
+  sitlGpsJammed: 0
+  extraParams: []
   vehSysId: 1
   vehCompId: 1
   baseMode: 0
